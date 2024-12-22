@@ -1,3 +1,5 @@
+import java.util.* ;
+
 public class DataTypesnVariables {
     class InitVar{
         public void initvar(String[] args) {
@@ -23,7 +25,25 @@ public class DataTypesnVariables {
 
     public static void main(String[] args) {
         DataTypesnVariables outerInstance = new DataTypesnVariables();
-        InitVar innerInstance = outerInstance.new InitVar();
-        innerInstance.initvar(args);
+        //InitVar innerInstance = outerInstance.new InitVar();
+        //innerInstance.initvar(args);
+        VarSwap instance = outerInstance.new VarSwap();
+        instance.varswap(args);
+    }
+
+    class VarSwap{
+        public void varswap(String args[]) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter int value");
+            int first = scanner.nextInt();
+            System.out.println("Enter int value");
+            int second = scanner.nextInt();
+
+            int temp = first;
+            first = second;
+            second = temp;
+
+            System.out.println("a = " + first + " b = " + second);
+        }
     }
 }
